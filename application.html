@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Rental Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #f00;
+            font-size: 14px;
+            margin-top: -15px;
+            margin-bottom: 10px;
+        }
+
+        .error-border {
+            border-color: #f00;
+        }
+        
+        .important-message {
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="applicationForm" action="https://formspree.io/f/xrgwbzqp" method="POST">
+        <h2>Rental Application Form</h2>
+        <label for="full_name"> Your Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="address"> Current Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="phone"> Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="state"> State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="city"> City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <label> Are you married?</label>
+        <input type="radio" name="marital_status" value="Yes" required> Yes <br>
+        <input type="radio" name="marital_status" value="No" required> No <br> <br>
+       
+
+        <label> Do you have kids?</label>
+        <input type="radio" name="have_kids" value="Yes" required> Yes <br>
+        <input type="radio" name="have_kids" value="No" required> No <br> <br>
+       
+
+        <label> Do you have a car?</label>
+        <input type="radio" name="have_car" value="Yes" required> Yes <br>
+        <input type="radio" name="have_car" value="No" required> No <br> <br>
+        
+
+        <label> Do you have a pet?</label>
+        <input type="radio" name="have_pet" value="Yes" required> Yes <br>
+        <input type="radio" name="have_pet" value="No" required> No <br><br>
+
+        <label for="occupation"> Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required> <br> <br>
+
+        <label for="household_size"> How many people will be living in the house?</label>
+        <input type="number" id="household_size" name="household_size" min="1" required> <br><br>
+
+        <label for="reason_for_moving"> Reasons for living in the present home:</label>
+        <textarea id="reason_for_moving" name="reason_for_moving" rows="4" required></textarea> <br><br>
+
+        <label for="lease_duration"> How long lease are you looking for?</label>
+        <input type="text" id="lease_duration" name="lease_duration" required>
+
+        <label for="move_in_date"> How soon do you intend to move in?</label>
+        <input type="text" id="move_in_date" name="move_in_date" required>
+
+        <label for="dob"> Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br> <br>
+
+        <label for="number_of_cars"> Number of Cars:</label>
+        <input type="number" id="number_of_cars" name="number_of_cars" min="0" required> <br><br>
+
+        <label for="occupant_picture"> A picture of occupant:</label>
+        <input type="file" id="occupant_picture" name="occupant_picture" accept="image/*" required> <br><br>
+
+        <label for="payment_soon"> How soon are you making the payment?</label>
+        <input type="text" id="payment_soon" name="payment_soon" required>
+
+        <label for="keys_documents_soon"> How soon do you want to receive the keys/documents?</label>
+        <input type="text" id="keys_documents_soon" name="keys_documents_soon" required>
+
+        <label for="application_fee">Application Fee $100 *</label> <br>
+        <input type="radio" id="zelle" name="application_fee" value="Zelle">
+        <label for="zelle">Zelle</label> <br> 
+        <input type="radio" id="paypal" name="application_fee" value="PayPal">
+        <label for="paypal">PayPal</label> <br> 
+        <input type="radio" id="cashapp" name="application_fee" value="CashApp">
+        <label for="cashapp">CashApp</label> <br>
+        <input type="radio" id="others" name="application_fee" value="Others">
+        <label for="others">Others</label> <br>
+
+        <textarea id="payment_methods" name="payment_methods" rows="4" placeholder="If you selected 'Others,' please provide details here"></textarea>
+
+
+        <label for="comments"> Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <div class="important-message">
+            Please make sure these questions are filled correctly because the best way you answer with your comment will impress us the most to accept your application.
+            <br><br>
+            I await your reply.
+            <br>
+            Yours Sincerely.
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("rental_application_form");
+
+            form.addEventListener("submit", function(event) {
+                const nameField = form.elements["full_name"];
+                const emailField = form.elements["email"];
+                const phoneField = form.elements["phone"];
+                const dobField = form.elements["dob"];
+                const fileField = form.elements["occupant_picture"];
+
+                let isValid = true;
+
+                if (!nameField.value.trim()) {
+                    isValid = false;
+                    showErrorMessage(nameField, "Please enter your full name.");
+                } else {
+                    hideErrorMessage(nameField);
+                }
+
+                if (!emailField.value.trim()) {
+                    isValid = false;
+                    showErrorMessage(emailField, "Please enter your email address.");
+                } else {
+                    hideErrorMessage(emailField);
+                }
+
+                if (!phoneField.value.trim()) {
+                    isValid = false;
+                    showErrorMessage(phoneField, "Please enter your phone number.");
+                } else {
+                    hideErrorMessage(phoneField);
+                }
+
+                if (!dobField.value.trim()) {
+                    isValid = false;
+                    showErrorMessage(dobField, "Please enter your date of birth.");
+                } else {
+                    hideErrorMessage(dobField);
+                }
+
+
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            function showErrorMessage(field, message) {
+                const errorDiv = document.createElement("div");
+                errorDiv.classList.add("error-message");
+                errorDiv.textContent = message;
+
+                field.classList.add("error-border");
+                field.parentNode.insertBefore(errorDiv, field.nextSibling);
+            }
+
+            function hideErrorMessage(field) {
+                const errorDiv = field.parentNode.querySelector(".error-message");
+                if (errorDiv) {
+                    field.parentNode.removeChild(errorDiv);
+                }
+                field.classList.remove("error-border");
+            }
+        });
+    </script>
+</body>
+</html>
